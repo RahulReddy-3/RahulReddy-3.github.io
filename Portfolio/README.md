@@ -17,7 +17,7 @@
 ## Setup
 Clone repository:
 
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/RahulReddy-3/RahulReddy-3.git
 
 
 [Visit my portfolio](https://RahulReddy-3.github.io/index.html)
