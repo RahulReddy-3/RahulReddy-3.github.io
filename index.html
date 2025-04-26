@@ -3,93 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Reddy | Data Engineering Portfolio</title>
-    
-    <!-- Libraries -->
+    <title>Rahul Reddy | Senior Data Analyst</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-    
-    <!-- Custom Styles -->
     <style>
-        .skill-bar { height: 8px; }
-        .skill-progress { 
-            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
-            transition: width 1s ease-in-out;
+        .left-pane {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800');
+            background-size: cover;
         }
+        .skill-bar { height: 8px; }
+        .progress { transition: width 1s ease-in-out; }
         .timeline-card { transition: transform 0.3s ease; }
         .timeline-card:hover { transform: translateY(-5px); }
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-gray-100">
-    
-    <!-- Edit Profile Button (Visible Only to You) -->
-    <button id="adminEdit" class="fixed bottom-8 right-8 z-50 bg-emerald-500 text-white p-3 rounded-full shadow-xl animate__animated animate__pulse"
-            onclick="location.href='edit-profile.html'">
-        ✎ Edit Profile
-    </button>
+<body class="bg-gray-100">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Left Pane -->
+        <aside class="left-pane text-white w-full md:w-1/3 p-8 space-y-6">
+            <div class="text-center">
+                <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" 
+                     alt="Profile" 
+                     class="w-48 h-48 rounded-full border-4 border-white mx-auto mb-4">
+                <h1 class="text-3xl font-bold">RAHUL REDDY RAYAPURAM</h1>
+                <p class="text-lg text-emerald-400">Senior Data Analyst</p>
+            </div>
 
-    <!-- Animated Background -->
-    <lottie-player id="dataFlow" class="fixed inset-0 opacity-10 -z-10" src="assets/lottie/data-pipeline.json" background="transparent" speed="0.5" loop autoplay></lottie-player>
-
-    <!-- Profile Section -->
-    <section class="container mx-auto px-6 py-16">
-        <div class="flex flex-col md:flex-row items-center gap-8 animate__animated animate__fadeIn">
-            
-            <!-- Profile Picture with Upload -->
-            <div class="relative group">
-                <input type="file" id="profileUpload" class="hidden" accept="image/*">
-                <img id="profileImg" src="assets/images/profile.jpg" 
-                     class="w-64 h-64 rounded-full border-4 border-emerald-500 shadow-2xl cursor-pointer hover:border-cyan-400 transition-all">
-                <div class="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                    <span class="text-white">Click to Upload</span>
+            <div class="space-y-4">
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Contact</h2>
+                    <p>📞 (469) 909-7612</p>
+                    <p>📧 innrahulreddy.3@gmail.com</p>
+                    <p>📍 San Diego, CA</p>
+                    <a href="https://linkedin.com/in/rahul-reddy-rayapuram" 
+                       class="text-emerald-400 hover:underline">LinkedIn Profile</a>
                 </div>
+
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Core Competencies</h2>
+                    <ul class="list-disc pl-4 space-y-2">
+                        <li>Data Warehousing</li>
+                        <li>ETL Pipeline Development</li>
+                        <li>Cloud Solutions (Azure/AWS)</li>
+                        <li>Advanced SQL Optimization</li>
+                        <li>Business Intelligence</li>
+                    </ul>
+                </div>
+
+                <a href="RahulReddy_DA.pdf" download 
+                   class="inline-block w-full bg-emerald-500 text-white text-center py-2 rounded-lg hover:bg-emerald-600 transition">
+                   📄 Download Resume
+                </a>
             </div>
+        </aside>
 
-            <!-- Dynamic Profile Info -->
-            <div class="flex-1 space-y-4">
-                <h1 id="userName" class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400"></h1>
-                <div id="profileTags" class="flex flex-wrap gap-2"></div>
-                <p id="userBio" class="text-xl text-gray-300"></p>
-                <div id="topSkills" class="grid grid-cols-2 gap-4"></div>
-            </div>
-        </div>
-    </section>
+        <!-- Main Content -->
+        <main class="flex-1 p-8 bg-white">
+            <!-- Professional Summary -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Professional Profile</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Results-driven Senior Data Analyst with 5+ years of experience in Health, Media, Insurance, 
+                    and Transportation industries. Proven expertise in transforming raw data into strategic insights 
+                    through advanced analytics, ETL optimization, and interactive dashboard development. Certified 
+                    in Agile methodologies with a strong track record of delivering high-impact data solutions under 
+                    tight deadlines.
+                </p>
+            </section>
 
-    <!-- Skills Matrix -->
-    <section class="container mx-auto px-6 py-16">
-        <h2 class="text-4xl font-bold mb-12 text-center">Technical Expertise</h2>
-        <div id="skillsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-    </section>
+            <!-- Technical Expertise -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-bold mb-2 text-emerald-600">Data Engineering</h3>
+                        <ul class="list-disc pl-4 space-y-1">
+                            <li>Azure Data Factory</li>
+                            <li>Snowflake Data Warehousing</li>
+                            <li>Spark/PySpark</li>
+                            <li>SSIS/SSRS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-bold mb-2 text-emerald-600">Analytics & BI</h3>
+                        <ul class="list-disc pl-4 space-y-1">
+                            <li>Power BI/Tableau</li>
+                            <li>Python (Pandas/NumPy)</li>
+                            <li>Advanced Excel</li>
+                            <li>KPI Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Interactive Timeline -->
-    <section class="container mx-auto px-6 py-16">
-        <h2 class="text-4xl font-bold mb-12 text-center">Career Journey</h2>
-        <div id="timeline" class="space-y-8"></div>
-    </section>
+            <!-- Experience -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Professional Experience</h2>
+                
+                <!-- Accenture Experience -->
+                <div class="timeline-card bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-2xl font-bold text-gray-700">Accenture (April 2018 - November 2021)</h3>
+                    <p class="text-lg text-emerald-500 mb-4">Application Development Senior Analyst</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                        <li>Engineered 50+ optimized Stored Procedures reducing data processing time by 50%</li>
+                        <li>Designed CDC pipelines achieving real-time data updates</li>
+                        <li>Developed Azure ETL solutions with Spark distributed processing</li>
+                        <li>Automated reporting systems using Python and Excel VBA</li>
+                    </ul>
+                </div>
 
-    <!-- Dynamic Content Script -->
-    <script src="scripts/app.js"></script>
+                <!-- Freelance Experience -->
+                <div class="timeline-card bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gray-700">Freelance Data Consultant (2024 - Present)</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                        <li>Developed forecasting models with 82% accuracy</li>
+                        <li>Optimized Snowflake data warehouse performance by 25%</li>
+                        <li>Implemented CI/CD pipelines reducing ETL deployment time by 40%</li>
+                        <li>Created customer analytics dashboards processing 40k+ feedback instances</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section>
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Education</h2>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-700">Master of Science in Computer Science</h3>
+                    <p class="text-emerald-500">Northwest Missouri State University</p>
+                    <p class="text-gray-500">Graduated: December 2023</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
     <script>
-        // Profile Image Upload
-        document.getElementById('profileUpload').addEventListener('change', function(e) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                document.getElementById('profileImg').src = reader.result;
-                localStorage.setItem('profileImage', reader.result);
-            }
-            reader.readAsDataURL(e.target.files[0]);
-        });
+        // Animate progress bars on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const skills = [
+                { name: 'SQL', level: 98 },
+                { name: 'Python', level: 95 },
+                { name: 'Power BI', level: 90 },
+                { name: 'Azure', level: 88 }
+            ];
 
-        // Initialize Lottie
-        LottieInteractivity.create({
-            mode: "scroll",
-            player: "#dataFlow",
-            actions: [
-                { visibility: [0,1], type: "play" }
-            ]
+            skills.forEach(skill => {
+                const bar = document.createElement('div');
+                bar.className = 'progress bg-emerald-500 h-full rounded';
+                bar.style.width = skill.level + '%';
+                document.querySelector('.skill-bars').appendChild(bar);
+            });
         });
     </script>
 </body>
