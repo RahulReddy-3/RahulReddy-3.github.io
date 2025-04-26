@@ -4,48 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahul Reddy | Data Engineering Portfolio</title>
+    
+    <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .skill-bar { height: 8px; }
+        .skill-progress { 
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            transition: width 1s ease-in-out;
+        }
+        .timeline-card { transition: transform 0.3s ease; }
+        .timeline-card:hover { transform: translateY(-5px); }
+    </style>
 </head>
-<body class="relative bg-gradient-to-br from-gray-900 to-blue-900 text-gray-100">
-    <!-- Background Elements -->
-    <div class="circuit-overlay"></div>
-    <lottie-player
-        id="dataPipeline"
-        src="assets/lottie/data-pipeline.json"
-        class="fixed top-0 left-0 w-full h-full opacity-10 -z-10"
-        speed="0.5"
-        loop
-        autoplay>
-    </lottie-player>
 
-    <!-- Edit Profile Button -->
-    <button id="editProfileBtn" 
-            class="fixed bottom-8 right-8 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-xl animate__animated animate__pulse animate__infinite"
-            onclick="window.location.href='edit-profile.html'">
+<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-gray-100">
+    
+    <!-- Edit Profile Button (Visible Only to You) -->
+    <button id="adminEdit" class="fixed bottom-8 right-8 z-50 bg-emerald-500 text-white p-3 rounded-full shadow-xl animate__animated animate__pulse"
+            onclick="location.href='edit-profile.html'">
         ✎ Edit Profile
     </button>
 
+    <!-- Animated Background -->
+    <lottie-player id="dataFlow" class="fixed inset-0 opacity-10 -z-10" src="assets/lottie/data-pipeline.json" background="transparent" speed="0.5" loop autoplay></lottie-player>
+
     <!-- Profile Section -->
     <section class="container mx-auto px-6 py-16">
-        <!-- ... (keep existing profile section content) ... -->
+        <div class="flex flex-col md:flex-row items-center gap-8 animate__animated animate__fadeIn">
+            
+            <!-- Profile Picture with Upload -->
+            <div class="relative group">
+                <input type="file" id="profileUpload" class="hidden" accept="image/*">
+                <img id="profileImg" src="assets/images/profile.jpg" 
+                     class="w-64 h-64 rounded-full border-4 border-emerald-500 shadow-2xl cursor-pointer hover:border-cyan-400 transition-all">
+                <div class="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <span class="text-white">Click to Upload</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Profile Info -->
+            <div class="flex-1 space-y-4">
+                <h1 id="userName" class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400"></h1>
+                <div id="profileTags" class="flex flex-wrap gap-2"></div>
+                <p id="userBio" class="text-xl text-gray-300"></p>
+                <div id="topSkills" class="grid grid-cols-2 gap-4"></div>
+            </div>
+        </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Matrix -->
     <section class="container mx-auto px-6 py-16">
-        <lottie-player
-            src="assets/lottie/db-connections.json"
-            class="w-48 h-48 absolute right-10 opacity-50"
-            speed="0.8"
-            loop
-            autoplay>
-        </lottie-player>
-        <!-- ... (keep existing skills content) ... -->
+        <h2 class="text-4xl font-bold mb-12 text-center">Technical Expertise</h2>
+        <div id="skillsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
     </section>
 
+    <!-- Interactive Timeline -->
+    <section class="container mx-auto px-6 py-16">
+        <h2 class="text-4xl font-bold mb-12 text-center">Career Journey</h2>
+        <div id="timeline" class="space-y-8"></div>
+    </section>
+
+    <!-- Dynamic Content Script -->
     <script src="scripts/app.js"></script>
+    <script>
+        // Profile Image Upload
+        document.getElementById('profileUpload').addEventListener('change', function(e) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('profileImg').src = reader.result;
+                localStorage.setItem('profileImage', reader.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        });
+
+        // Initialize Lottie
+        LottieInteractivity.create({
+            mode: "scroll",
+            player: "#dataFlow",
+            actions: [
+                { visibility: [0,1], type: "play" }
+            ]
+        });
+    </script>
 </body>
 </html>

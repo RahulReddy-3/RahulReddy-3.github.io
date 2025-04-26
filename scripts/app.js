@@ -1,43 +1,50 @@
-// Profile data initialization
-let profileData = {
-    // ... (existing profile data) ...
-};
-
-// Initialize when page loads
+// Load Profile Data
 document.addEventListener('DOMContentLoaded', () => {
-    loadProfile();
-    renderSkills();
-    initAnimations();
-    createBinaryRain();
+    const profile = JSON.parse(localStorage.getItem('portfolioProfile')) || defaultProfile;
+    renderProfile(profile);
+    renderTimeline(profile.experience);
 });
 
-function createBinaryRain() {
-    const container = document.createElement('div');
-    container.className = 'binary-rain';
+// Dynamic Content Rendering
+function renderProfile(data) {
+    document.getElementById('userName').textContent = data.name;
+    document.getElementById('userBio').textContent = data.bio;
     
-    for(let i = 0; i < 50; i++) {
-        const digit = document.createElement('div');
-        digit.className = 'binary-digit';
-        digit.textContent = Math.random() > 0.5 ? '1' : '0';
-        digit.style.left = `${Math.random() * 100}%`;
-        digit.style.animationDelay = `${Math.random() * 10}s`;
-        container.appendChild(digit);
-    }
-    
-    document.body.appendChild(container);
+    // Skills Matrix
+    const skillsHTML = data.skills.map(skill => `
+        <div class="skill-card p-4 bg-gray-800 rounded-lg">
+            <div class="flex justify-between mb-2">
+                <span>${skill.name}</span>
+                <span class="text-emerald-400">${skill.category}</span>
+            </div>
+            <div class="skill-bar bg-gray-700 rounded-full">
+                <div class="skill-progress h-full rounded-full" style="width: ${skill.level}%"></div>
+            </div>
+        </div>
+    `).join('');
+    document.getElementById('skillsGrid').innerHTML = skillsHTML;
 }
 
-// ... (keep other existing functions) ...
+// Timeline Expansion
+function renderTimeline(experiences) {
+    const timelineHTML = experiences.map(exp => `
+        <div class="timeline-card bg-gray-800 p-6 rounded-xl relative">
+            <h3 class="text-2xl font-bold text-emerald-400">${exp.year}</h3>
+            <p class="text-lg mt-2">${exp.summary}</p>
+            <button class="text-cyan-400 mt-4 know-more-btn" data-details="${exp.details}">
+                Know More →
+            </button>
+            <div class="details-panel hidden mt-4 p-4 bg-gray-700 rounded-lg"></div>
+        </div>
+    `).join('');
+    document.getElementById('timeline').innerHTML = timelineHTML;
 
-// Add animation to skill bars on load
-function initAnimations() {
-    document.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.classList.add('skill-bar-animate');
-    });
-    
-    ScrollReveal().reveal('.skill-card', {
-        delay: 200,
-        interval: 100,
-        reset: true
+    // Add Expand Functionality
+    document.querySelectorAll('.know-more-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const detailsPanel = this.nextElementSibling;
+            detailsPanel.innerHTML = this.dataset.details;
+            detailsPanel.classList.toggle('hidden');
+        });
     });
 }
