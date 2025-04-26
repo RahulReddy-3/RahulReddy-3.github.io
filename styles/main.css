@@ -1,86 +1,91 @@
 :root {
-    --primary: #00E5FF;
-    --secondary: #6C63FF;
-    --accent: #FF6B6B;
-    --background: #0F172A;
-    --text: #F8FAFC;
+    --primary-color: #2F855A;
+    --secondary-color: #3182CE;
+    --text-dark: #2D3748;
+    --text-light: #718096;
 }
 
 body {
-    background-color: var(--background);
-    color: var(--text);
     font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
 }
 
-/* Skill Vertical Layout */
-.skills-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background: url('assets/images/circuit-pattern.png') center/cover;
+.sidebar {
+    background: #fff;
     padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 }
 
-.skill-item {
-    background: rgba(255,255,255,0.1);
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: #fff;
     padding: 1.5rem;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Project Timeline */
-.project-timeline {
-    position: relative;
-    padding: 4rem 0;
+.skill-bar {
+    height: 8px;
+    background: #e0e7ff;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.project-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 4px;
+.skill-progress {
     height: 100%;
-    background: linear-gradient(to bottom, var(--primary), var(--secondary));
-    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.5s ease;
+}
+
+.timeline-item {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
-    position: relative;
-    width: 45%;
-    padding: 2rem;
-    margin: 4rem 0;
-    background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary);
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.project-card:nth-child(odd) {
-    margin-left: auto;
-    background: url('assets/images/data-flow.png') right bottom/contain no-repeat;
-}
-
-.project-card:nth-child(even) {
-    margin-right: auto;
-    background: url('assets/images/cloud-pattern.png') left bottom/contain no-repeat;
-}
-
-/* Section Backgrounds */
-.section-header {
-    position: relative;
-    padding: 4rem 2rem;
-    background: linear-gradient(45deg, rgba(108,99,255,0.1), rgba(0,229,255,0.1)),
-                url('assets/images/binary-pattern.png');
-    margin: 4rem 0;
-    border-radius: 20px;
-}
-
-/* Hover Effects */
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(108,99,255,0.3);
-    transition: all 0.3s ease;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: static;
+        width: 100%;
+    }
 }
