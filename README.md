@@ -15,8 +15,8 @@
 - GitHub Pages
 
 ## Setup
-1. Clone repository:
-```bash
+Clone repository:
+
 git clone https://github.com/yourusername/your-repo.git
 
 
