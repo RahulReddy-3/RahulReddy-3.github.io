@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahul Reddy | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: 'fadeIn 1.5s ease-in-out',
+              float: 'float 3s ease-in-out infinite',
+              pulseSlow: 'pulse 4s infinite',
+              typewriter: 'typewriter 3s steps(40) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' }
+              },
+              typewriter: {
+                '0%': { width: '0' },
+                '100%': { width: '100%' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .bg-tech {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Hero Section -->
+    <section class="h-screen bg-tech text-white flex flex-col items-center justify-center text-center p-6 animate-fadeIn">
+      <h1 class="text-5xl font-bold mb-2">Hi, I'm Rahul Reddy</h1>
+      <p class="text-xl max-w-xl mb-4">Senior Data Analyst | SQL & Python Enthusiast | Cloud ETL Expert</p>
+      <p class="text-lg text-yellow-300 h-8 overflow-hidden whitespace-nowrap border-r-4 border-yellow-300 pr-2 animate-typewriter" id="hobbyText"></p>
+      <div class="mt-6">
+        <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition">View Projects</a>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-10">Skills & Expertise</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div>
+            <h3 class="text-lg font-semibold">SQL</h3>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-green-500 h-4 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Python</h3>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-green-500 h-4 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Power BI</h3>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-green-500 h-4 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Azure Data Factory</h3>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-green-500 h-4 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">ETL Pipelines</h3>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-green-500 h-4 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Data Modeling</h3>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-green-500 h-4 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-100 to-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-10">Career Timeline</h2>
+        <div class="relative border-l-4 border-blue-500 pl-6">
+          <div class="mb-10">
+            <h3 class="text-xl font-semibold">2024 - Present: Freelance Data Analyst</h3>
+            <p class="text-gray-700">Developed Power BI dashboards, built forecasting models, and optimized Snowflake data warehousing.</p>
+          </div>
+          <div class="mb-10">
+            <h3 class="text-xl font-semibold">2020 - 2021: Senior Analyst at Accenture</h3>
+            <p class="text-gray-700">Led ETL design, performance tuning, and Spark-based pipelines using Azure Data Factory.</p>
+          </div>
+          <div class="mb-10">
+            <h3 class="text-xl font-semibold">2018 - 2020: Analyst at Accenture</h3>
+            <p class="text-gray-700">Built scalable data warehouses and implemented SSIS-based data transformation pipelines.</p>
+          </div>
+          <div class="mb-10">
+            <h3 class="text-xl font-semibold">2017 - 2018: Associate at Accenture</h3>
+            <p class="text-gray-700">Created Oracle DB integrations and automated performance reports for Amazon Marketplace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rest of sections (Resume, Projects, Contact) remain unchanged -->
+
+    <script>
+      const toggle = document.getElementById("toggleDownload");
+      const downloadBtn = document.getElementById("downloadBtn");
+
+      toggle.addEventListener("change", () => {
+        downloadBtn.style.display = toggle.checked ? "inline-block" : "none";
+      });
+
+      const hobbies = ["🎵 Singing", "⚽ Football", "🎧 Music"];
+      let index = 0;
+      const hobbyText = document.getElementById("hobbyText");
+
+      setInterval(() => {
+        hobbyText.textContent = hobbies[index];
+        index = (index + 1) % hobbies.length;
+      }, 3000);
+    </script>
+  </body>
+</html>
