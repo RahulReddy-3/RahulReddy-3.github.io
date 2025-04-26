@@ -1,20 +1,19 @@
-📁 portfolio
-├── 📄 index.html              # Main website
-├── 📄 edit-profile.html       # Profile editor
-├── 📄 README.md               # Documentation
-├── 📁 scripts
-│   ├── 📄 app.js              # Main JavaScript logic
-│   └── 📄 profile-editor.js   # Profile editing logic
-├── 📁 styles
-│   ├── 📄 main.css            # Core styling
-│   └── 📄 animations.css      # Custom animations
-├── 📁 assets
-│   ├── 📁 lottie             # Animation JSON files
-│   │   ├── 📄 data-pipeline.json
-│   │   ├── 📄 db-connections.json
-│   │   ├── 📄 cloud-infra.json
-│   │   └── 📄 data-viz.json
-│   └── 📁 images             # Static images
-│       └── 📄 profile-placeholder.jpg
-└── 📁 public                 # Publicly accessible files
-    └── 📄 Rahul_Reddy_Resume.pdf
+portfolio/
+├── index.html
+├── edit-profile.html
+├── scripts/
+│   ├── app.js
+│   └── profile-editor.js
+├── styles/
+│   ├── main.css
+│   └── animations.css
+├── assets/
+│   ├── lottie/
+│   │   └── data-pipeline.json
+│   └── images/
+│       ├── profile.jpg
+│       └── company-logos/
+│           ├── accenture.png
+│           └── snowflake.png
+└── public/
+    └── Rahul_Reddy_Resume.pdf
