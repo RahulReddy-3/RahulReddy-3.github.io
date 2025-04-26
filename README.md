@@ -6,7 +6,7 @@ Welcome to my personal portfolio! Here you can find my skills, experience, proje
 
 Check out my live portfolio website hosted on GitHub Pages:
 
-[Visit my portfolio](https://RahulReddyRayapuram.github.io/)
+[Visit my portfolio](https://RahulReddyRayapuram.github.io/index.html)
 
 ## Skills & Expertise
 
