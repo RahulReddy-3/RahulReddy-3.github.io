@@ -17,3 +17,5 @@ portfolio/
 │           └── snowflake.png
 └── public/
     └── Rahul_Reddy_Resume.pdf
+
+I need vibrant colir themes for my website. SKills in vertical and also the projects in  a timeline view. and tailor the sections properly and include small background pictures related to IT industry, Data ENgineering, wherever required. 
