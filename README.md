@@ -1,30 +1,39 @@
-# Rahul Reddy Portfolio
+# Data Engineering Portfolio
 
-Welcome to my personal portfolio! Here you can find my skills, experience, projects, and more.
+## Features
+- Dynamic profile editing system
+- Animated skill visualizations
+- Interactive background effects
+- Responsive design
+- Local storage persistence
 
-## Live Website
+## Technologies Used
+- Tailwind CSS
+- Animate.css
+- LottieFiles
+- ScrollReveal
+- GitHub Pages
 
-Check out my live portfolio website hosted on GitHub Pages:
+## Setup
+1. Clone repository:
+```bash
+git clone https://github.com/yourusername/your-repo.git
 
-[Visit my portfolio](https://RahulReddyRayapuram.github.io/index.html)
 
-## Skills & Expertise
+## Key Enhancements
+1. Professional tech animations using LottieFiles
+2. Advanced skill visualization with dynamic levels
+3. Floating edit button with smooth transitions
+4. Modern dark theme with gradient accents
+5. Scroll-triggered animations
+6. Local storage for profile persistence
+7. Responsive grid layouts
+8. Hover effects and micro-interactions
 
-- SQL: 9.5/10
-- Python: 7/10
-- Power BI: 7.5/10
-- Azure Synapse: 6.5/10
-- ETL Pipelines: 8.5/10
-- Data Modeling: 8/10
-- Snowflake: 8/10
-- Tableau: 7/10
-- Git/GitHub: 7/10
-- Cloud (AWS - S3): 7/10
-- Java: 7/10
+To complete the setup:
+1. Create a GitHub repository with this structure
+2. Add your lottie animations to `/assets/lottie/`
+3. Replace placeholder images
+4. Customize the color scheme in Tailwind classes
+5. Deploy through GitHub Pages
 
-## Career Timeline
-
-- **2024 - Present**: Freelance Data Analyst
-- **2020 - 2021**: Senior Analyst at Accenture
-- **2018 - 2020**: Analyst at Accenture
-- **2017 - 2018**: Associate at Accenture
