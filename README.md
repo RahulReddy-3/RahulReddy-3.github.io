@@ -19,6 +19,10 @@
 ```bash
 git clone https://github.com/yourusername/your-repo.git
 
+<<<<<<< HEAD
+=======
+[Visit my portfolio](https://RahulReddy-3.github.io/index.html)
+>>>>>>> a6115fc9533d739a8901d26f77d4965e1996ee18
 
 ## Key Enhancements
 1. Professional tech animations using LottieFiles
