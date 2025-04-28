@@ -1,151 +1,136 @@
-<!-- index.html will contain the real code -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rahul Reddy | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rahul Reddy Rayapuram | Portfolio</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Animate.css CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <!-- Lottie Player -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/timeline.css">
   <link rel="stylesheet" href="styles/animations.css">
+
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
-<body class="bg-gray-100 text-gray-900 relative">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+
   <!-- Scroll Progress Bar -->
-  <div id="progressBar" class="fixed top-0 left-0 z-50"></div>
+  <div id="progressBar" class="fixed top-0 left-0 w-0 h-1 bg-emerald-400 z-50"></div>
 
   <div class="flex flex-col md:flex-row min-h-screen">
     <!-- Sidebar -->
-    <aside class="w-full md:w-1/3 p-8 flex flex-col items-center text-white">
-      <img src="assets/images/profile-placeholder.jpg" alt="Profile" class="w-40 h-40 rounded-full mb-4 border-4 border-white shadow-lg">
-      <h1 class="text-3xl font-bold mb-2">Rahul Reddy Rayapuram</h1>
-      <p class="text-lg text-emerald-300 mb-4">Senior Data Analyst</p>
-      <p id="dynamicInterest" class="text-yellow-300 h-6 overflow-hidden whitespace-nowrap border-r-2 border-yellow-300 pr-2 animate__animated"></p>
-      <a href="public/Rahul_Reddy_Resume.pdf" download class="mt-6 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-6 rounded transition">📄 Download Resume</a>
+    <aside class="w-full md:w-1/3 bg-blue-900 p-6 flex flex-col items-center text-white relative">
+      <img id="profilePic" src="assets/images/profile-placeholder.jpg" alt="Profile" class="w-40 h-40 rounded-full mb-4 border-4 border-white shadow-lg">
+      <h1 id="fullName" class="text-3xl font-bold mb-1 text-center">Rahul Reddy Rayapuram</h1>
+      <p id="designation" class="text-lg text-emerald-300 mb-2 text-center">Senior Data Analyst</p>
+      <p id="location" class="text-sm mb-2">San Diego, CA</p>
+      <p id="phoneNumber" class="text-sm mb-2">+1 (469) 909-7612</p>
+      <p id="email" class="text-sm mb-4">iamrahulreddy.3@gmail.com</p>
 
-      <div class="mt-8 text-sm">
-        <h2 class="font-bold mb-2">Interests</h2>
-        <p class="italic">⚽ Football | 🎵 Music | 📊 Data Enthusiast | 🎤 Singer</p>
+      <div class="flex space-x-4 mt-2">
+        <a href="https://linkedin.com/in/rahul-reddy-rayapuram" target="_blank" class="hover:text-emerald-400">LinkedIn</a>
+        <a href="https://github.com/RahulReddy-3" target="_blank" class="hover:text-emerald-400">GitHub</a>
       </div>
 
-      <!-- Dark Mode Toggle -->
-      <button id="themeToggle" class="mt-10 text-2xl">🌙</button>
+      <!-- Resume and Edit Profile -->
+      <div class="flex flex-col items-center mt-6 space-y-4">
+        <a href="public/Rahul_Reddy_Resume.pdf" download class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded transition">
+          📄 Download Resume
+        </a>
+        <a href="edit-profile.html" class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded transition">
+          ✏️ Edit Profile
+        </a>
+      </div>
+
+      <!-- Interests -->
+      <div class="mt-10 text-center text-sm">
+        <h2 class="font-bold text-lg mb-1">Interests</h2>
+        <p id="dynamicInterest" class="text-emerald-300 h-5 animate__animated"></p>
+      </div>
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 p-8 bg-white dark:bg-gray-900 dark:text-white">
-      <!-- Hero Animation -->
-      <section class="flex flex-col items-center mb-12">
-        <lottie-player src="assets/lottie/tech-background.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
-        <h2 class="text-4xl font-bold mt-6 text-center">Turning Complex Data into Clear Insights — Empowering Smarter Decisions 🚀</h2>
+    <main class="flex-1 p-8 space-y-16">
+
+      <!-- Hero Section -->
+      <section class="text-center">
+        <lottie-player src="assets/lottie/tech-dots.json" background="transparent" speed="1" loop autoplay style="width: 300px; height: 300px; margin: auto;"></lottie-player>
+        <h2 class="text-4xl font-bold mt-6 animate__animated animate__fadeInUp">Engineering data into powerful stories 🚀</h2>
       </section>
 
-      <!-- Summary Section -->
-      <section class="mb-12 animate__animated animate__fadeInUp">
-        <h2 class="text-3xl font-bold mb-4">Professional Summary</h2>
+      <!-- About Me -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Results-driven Senior Data Analyst with 5+ years experience across Health, Media, Insurance, and Transportation industries. Skilled in Data Warehousing, ETL Optimization, Cloud Solutions, Agile Scrum methodology, and delivering data-driven insights through dashboards and reporting tools.
+          Fueled by curiosity and a passion for technology, I build data-driven solutions that transform ideas into impact. 
+          With a foundation in Data Engineering and a vision for scalable systems, I craft pipelines that power tomorrow’s innovations.
+          Every dataset has a story — I make sure it’s heard clearly and powerfully.
         </p>
       </section>
 
       <!-- Skills Section -->
-      <section class="mb-12">
-        <h2 class="text-3xl font-bold mb-8">Skills & Expertise</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Skill Items -->
-          <div class="skill">
-            <h4>SQL</h4>
-            <div class="skill-bar">
-              <div class="skill-progress" data-skill="95%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h4>Python</h4>
-            <div class="skill-bar">
-              <div class="skill-progress" data-skill="85%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h4>Power BI</h4>
-            <div class="skill-bar">
-              <div class="skill-progress" data-skill="80%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h4>Azure Synapse</h4>
-            <div class="skill-bar">
-              <div class="skill-progress" data-skill="70%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h4>ETL Pipelines</h4>
-            <div class="skill-bar">
-              <div class="skill-progress" data-skill="85%"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h4>Data Modeling</h4>
-            <div class="skill-bar">
-              <div class="skill-progress" data-skill="80%"></div>
-            </div>
-          </div>
+      <section>
+        <h2 class="text-3xl font-bold mb-6">Skills & Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="skill"><h4>SQL</h4><div class="skill-bar"><div class="skill-progress" data-skill="95%"></div></div></div>
+          <div class="skill"><h4>Python</h4><div class="skill-bar"><div class="skill-progress" data-skill="85%"></div></div></div>
+          <div class="skill"><h4>Power BI</h4><div class="skill-bar"><div class="skill-progress" data-skill="80%"></div></div></div>
+          <div class="skill"><h4>Azure Synapse</h4><div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div></div>
+          <div class="skill"><h4>ETL Pipelines</h4><div class="skill-bar"><div class="skill-progress" data-skill="85%"></div></div></div>
+          <div class="skill"><h4>Data Modeling</h4><div class="skill-bar"><div class="skill-progress" data-skill="80%"></div></div></div>
+          <div class="skill"><h4>Snowflake</h4><div class="skill-bar"><div class="skill-progress" data-skill="80%"></div></div></div>
+          <div class="skill"><h4>Tableau</h4><div class="skill-bar"><div class="skill-progress" data-skill="75%"></div></div></div>
+          <div class="skill"><h4>Git/GitHub</h4><div class="skill-bar"><div class="skill-progress" data-skill="75%"></div></div></div>
+          <div class="skill"><h4>AWS S3</h4><div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div></div>
+          <div class="skill"><h4>Java</h4><div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div></div>
+          <div class="skill"><h4>R Programming</h4><div class="skill-bar"><div class="skill-progress" data-skill="65%"></div></div></div>
         </div>
       </section>
 
-      <!-- Timeline Section -->
-      <section class="mb-12">
+      <!-- Professional Summary -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4">Professional Summary</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Results-driven Senior Data Analyst with over 5 years of experience across Health, Media, Insurance, and Transportation industries. 
+          Skilled in transforming raw data into strategic insights, optimizing ETL pipelines, implementing cloud solutions, and developing business intelligence dashboards. 
+          Proven ability to drive cost savings, improve operational efficiency, and deliver data-driven business impact.
+        </p>
+      </section>
+
+      <!-- Career Timeline -->
+      <section>
         <h2 class="text-3xl font-bold mb-8 text-center">Career Timeline</h2>
-        <div class="timeline">
-          <!-- Timeline Items -->
-          <div class="timeline-item">
-            <h3>2024 - Freelance Consultant</h3>
-            <span>Customer Analytics & Snowflake Optimization</span>
-            <p class="more-content">Built forecasting models, 82% accuracy, managed Snowflake data warehouse optimization by 25%.</p>
-            <button class="more-toggle">More →</button>
-          </div>
-          <div class="timeline-item">
-            <h3>2020 - 2021 - Senior Analyst, Accenture</h3>
-            <span>ETL Optimization & Azure Data Pipelines</span>
-            <p class="more-content">Designed CDC pipelines, Spark distributed ETL, tuned SQL performance, improved reporting speed 30%.</p>
-            <button class="more-toggle">More →</button>
-          </div>
-          <div class="timeline-item">
-            <h3>2018 - 2020 - Analyst, Accenture</h3>
-            <span>ETL & Data Quality</span>
-            <p class="more-content">Created SSIS pipelines, built Tableau dashboards, optimized Azure SQL DB for production scale systems.</p>
-            <button class="more-toggle">More →</button>
-          </div>
-          <div class="timeline-item">
-            <h3>2017 - 2018 - Associate, Accenture</h3>
-            <span>Oracle Data Integrations</span>
-            <p class="more-content">Developed ETL processes in Oracle and automated reports for Amazon Marketplace project.</p>
-            <button class="more-toggle">More →</button>
-          </div>
-          <div class="timeline-item">
-            <h3>2023 - Academic Projects</h3>
-            <span>OCR Automation & iOS App</span>
-            <p class="more-content">Built Python OCR service and iOS navigation app with Firebase authentication.</p>
-            <button class="more-toggle">More →</button>
-          </div>
+        <div id="timelineContainer" class="timeline-container">
+          <!-- Timeline items will be dynamically inserted by app.js -->
         </div>
       </section>
 
-      <!-- Footer Section -->
-      <footer class="text-center py-8 text-gray-600 dark:text-gray-400">
-        Made with ❤️ by Rahul Reddy Rayapuram | <a href="https://linkedin.com/in/rahul-reddy-rayapuram" target="_blank" class="text-emerald-500 hover:underline">LinkedIn</a>
-      </footer>
+      <!-- Academic Projects -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4">Academic Projects</h2>
+        <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 space-y-2">
+          <li><strong>Python OCR Pipeline:</strong> Built a Flask-based OCR system using Tesseract OCR and Google Colab for text extraction from PDFs.</li>
+          <li><strong>iOS University App:</strong> Developed an iOS app integrating campus maps, mailing, and Firebase authentication for enhanced student exploration.</li>
+        </ul>
+      </section>
+
+      <!-- Awards -->
+      <section>
+        <h2 class="text-3xl font-bold mb-4">Awards</h2>
+        <p class="bg-yellow-200 text-yellow-800 p-4 rounded-lg inline-block">
+          ⭐ Star Performer Award at Accenture
+        </p>
+      </section>
+
     </main>
   </div>
 
@@ -153,5 +138,7 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/typewriter.js"></script>
   <script src="scripts/darkmode.js"></script>
+  <script src="scripts/saveProfile.js"></script>
+
 </body>
 </html>

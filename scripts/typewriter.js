@@ -1,19 +1,19 @@
 // typewriter.js
 
 const interests = [
-  "🎵 I love Singing",
-  "⚽ Lucky to have played Football",
-  "📊 Technical Data Enthusiast",
-  "🚀 I build efficient Cloud Solutions"
+  "⚽ Football",
+  "🎵 Singing",
+  "🎧 Music",
+  "📷 Photography",
+  "🚀 Learning New Technologies"
 ];
 
-let currentInterest = 0;
-const interestText = document.getElementById('dynamicInterest');
+let index = 0;
+let interestText = document.getElementById('dynamicInterest');
 
-function rotateInterest() {
-  interestText.textContent = interests[currentInterest];
-  currentInterest = (currentInterest + 1) % interests.length;
+function updateInterest() {
+  interestText.textContent = interests[index];
+  index = (index + 1) % interests.length;
 }
 
-setInterval(rotateInterest, 3000);
-rotateInterest();
+setInterval(updateInterest, 3000);

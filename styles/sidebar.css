@@ -1,24 +1,23 @@
 /* sidebar.css */
 
 aside {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('assets/images/background.jpg') center center/cover no-repeat;
-    background-attachment: fixed;
-}
-
-aside img {
-    transition: transform 0.4s ease;
-}
-
-aside img:hover {
-    transform: scale(1.05);
+    background: linear-gradient(to bottom right, #1e3a8a, #2563eb);
 }
 
 aside a {
-    color: #10b981;
-    transition: color 0.3s;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 aside a:hover {
     color: #34d399;
+}
+
+#dynamicInterest {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #34d399;
+    animation: typing 3s steps(30, end) infinite alternate;
 }

@@ -1,30 +1,24 @@
 /* animations.css */
 
-.animate__animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
+/* Smooth fade-in on scroll */
+.animate__fadeInUp {
+    animation: fadeInUp 1s ease forwards;
 }
 
-.fadeInUp {
-  animation-name: fadeInUp;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-#dynamicInterest {
-  animation: typing 4s steps(40, end) infinite alternate;
-}
-
+/* Typing dynamic interest text */
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
+}
+
+/* Custom scroll fade up */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
