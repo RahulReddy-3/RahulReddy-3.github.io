@@ -34,7 +34,7 @@ const timelineData = [
   {
     title: "Freelance Data Consultant",
     duration: "March 2024 - Present",
-    image: "assets/images/freelance.png",
+    image: "assets/images/freelance.PNG",
     shortDesc: "Crafted predictive models, Snowflake tuning, CI/CD pipelines, customer analytics dashboards.",
     responsibilities: [
       "Built forecasting models with 82% accuracy for budgeting.",
@@ -46,7 +46,7 @@ const timelineData = [
   {
     title: "Academic Project - Institutional Data OCR",
     duration: "Aug 2023 - Dec 2023",
-    image: "assets/images/university.png",
+    image: "assets/images/university.PNG",
     shortDesc: "Built Python OCR service for university archives using Tesseract, Flask, and Google Drive.",
     responsibilities: [
       "Created end-to-end text extraction pipeline from PDFs.",
@@ -58,7 +58,7 @@ const timelineData = [
   {
     title: "Academic Project - iOS University Explorer App",
     duration: "Jan 2023 - April 2023",
-    image: "assets/images/university.png",
+    image: "assets/images/university.PNG",
     shortDesc: "Built iOS app with Firebase login, campus Maps, and real-time mailing features for university.",
     responsibilities: [
       "Built iOS UI and integrated Firebase Auth.",
@@ -70,7 +70,7 @@ const timelineData = [
   {
     title: "Accenture - Application Development Senior Analyst",
     duration: "April 2020 - November 2021",
-    image: "assets/images/accenture.png",
+    image: "assets/images/accenture.PNG",
     shortDesc: "Built Data Warehouses, SQL tuning, Azure ETL pipelines across Health, Media, and Transport domains.",
     responsibilities: [
       "Optimized 50+ ETL packages reducing data time by 50%.",
@@ -82,7 +82,7 @@ const timelineData = [
   {
     title: "Accenture - Application Development Analyst",
     duration: "April 2018 - March 2020",
-    image: "assets/images/accenture.png",
+    image: "assets/images/accenture.PNG",
     shortDesc: "Developed SSIS pipelines, Azure Synapse analytics, Disney project front-end debugging via SQL tuning.",
     responsibilities: [
       "Engineered scalable ETL pipelines (Azure + SSIS).",
@@ -94,7 +94,7 @@ const timelineData = [
   {
     title: "Accenture - Application Development Associate",
     duration: "Sept 2017 - March 2018",
-    image: "assets/images/accenture.png",
+    image: "assets/images/accenture.PNG",
     shortDesc: "Oracle DB design for Amazon Seller Central; automated reports saving 40 hours monthly.",
     responsibilities: [
       "Built Oracle Database for 2M+ seller records.",
