@@ -1,162 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Reddy | Senior Data Analyst</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        .left-pane {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800');
-            background-size: cover;
-        }
-        .skill-bar { height: 8px; }
-        .progress { transition: width 1s ease-in-out; }
-        .timeline-card { transition: transform 0.3s ease; }
-        .timeline-card:hover { transform: translateY(-5px); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Reddy | Senior Data Analyst</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/timeline.css">
+  <link rel="stylesheet" href="styles/animations.css">
 </head>
 
-<body class="bg-gray-100">
-    <div class="flex flex-col md:flex-row min-h-screen">
-        <!-- Left Pane -->
-        <aside class="left-pane text-white w-full md:w-1/3 p-8 space-y-6">
-            <div class="text-center">
-                <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" 
-                     alt="Profile" 
-                     class="w-48 h-48 rounded-full border-4 border-white mx-auto mb-4">
-                <h1 class="text-3xl font-bold">RAHUL REDDY RAYAPURAM</h1>
-                <p class="text-lg text-emerald-400">Senior Data Analyst</p>
-            </div>
+<body class="bg-gradient-to-r from-blue-50 to-indigo-100 text-gray-900 dark:bg-gray-900 dark:text-white transition-all duration-500">
 
-            <div class="space-y-4">
-                <div>
-                    <h2 class="text-xl font-bold mb-2">Contact</h2>
-                    <p>📞 (469) 909-7612</p>
-                    <p>📧 innrahulreddy.3@gmail.com</p>
-                    <p>📍 San Diego, CA</p>
-                    <a href="https://linkedin.com/in/rahul-reddy-rayapuram" 
-                       class="text-emerald-400 hover:underline">LinkedIn Profile</a>
-                </div>
+<!-- Scroll Progress Bar -->
+<div id="progressBar" class="fixed top-0 left-0 h-1 bg-emerald-500 z-50" style="width: 0;"></div>
 
-                <div>
-                    <h2 class="text-xl font-bold mb-2">Core Competencies</h2>
-                    <ul class="list-disc pl-4 space-y-2">
-                        <li>Data Warehousing</li>
-                        <li>ETL Pipeline Development</li>
-                        <li>Cloud Solutions (Azure/AWS)</li>
-                        <li>Advanced SQL Optimization</li>
-                        <li>Business Intelligence</li>
-                    </ul>
-                </div>
+<div class="flex flex-col md:flex-row min-h-screen">
+  <!-- Sidebar -->
+  <aside class="w-full md:w-1/4 bg-gray-800 p-6 text-white flex flex-col items-center relative">
+    <input type="file" id="profileUpload" class="hidden" onchange="loadProfile(event)">
+    <img id="profilePic" src="assets/images/profile-placeholder.jpg" class="w-36 h-36 rounded-full border-4 border-emerald-400 shadow-lg cursor-pointer hover:scale-105" onclick="document.getElementById('profileUpload').click()" alt="Profile Picture">
 
-                <a href="RahulReddy_DA.pdf" download 
-                   class="inline-block w-full bg-emerald-500 text-white text-center py-2 rounded-lg hover:bg-emerald-600 transition">
-                   📄 Download Resume
-                </a>
-            </div>
-        </aside>
+    <h1 class="mt-4 text-2xl font-bold text-center">Rahul Reddy</h1>
+    <p class="text-emerald-400 mb-4">Senior Data Analyst</p>
 
-        <!-- Main Content -->
-        <main class="flex-1 p-8 bg-white">
-            <!-- Professional Summary -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800">Professional Profile</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Results-driven Senior Data Analyst with 5+ years of experience in Health, Media, Insurance, 
-                    and Transportation industries. Proven expertise in transforming raw data into strategic insights 
-                    through advanced analytics, ETL optimization, and interactive dashboard development. Certified 
-                    in Agile methodologies with a strong track record of delivering high-impact data solutions under 
-                    tight deadlines.
-                </p>
-            </section>
-
-            <!-- Technical Expertise -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6 text-gray-800">Technical Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h3 class="font-bold mb-2 text-emerald-600">Data Engineering</h3>
-                        <ul class="list-disc pl-4 space-y-1">
-                            <li>Azure Data Factory</li>
-                            <li>Snowflake Data Warehousing</li>
-                            <li>Spark/PySpark</li>
-                            <li>SSIS/SSRS</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h3 class="font-bold mb-2 text-emerald-600">Analytics & BI</h3>
-                        <ul class="list-disc pl-4 space-y-1">
-                            <li>Power BI/Tableau</li>
-                            <li>Python (Pandas/NumPy)</li>
-                            <li>Advanced Excel</li>
-                            <li>KPI Development</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6 text-gray-800">Professional Experience</h2>
-                
-                <!-- Accenture Experience -->
-                <div class="timeline-card bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 class="text-2xl font-bold text-gray-700">Accenture (April 2018 - November 2021)</h3>
-                    <p class="text-lg text-emerald-500 mb-4">Application Development Senior Analyst</p>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-600">
-                        <li>Engineered 50+ optimized Stored Procedures reducing data processing time by 50%</li>
-                        <li>Designed CDC pipelines achieving real-time data updates</li>
-                        <li>Developed Azure ETL solutions with Spark distributed processing</li>
-                        <li>Automated reporting systems using Python and Excel VBA</li>
-                    </ul>
-                </div>
-
-                <!-- Freelance Experience -->
-                <div class="timeline-card bg-gray-50 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gray-700">Freelance Data Consultant (2024 - Present)</h3>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-600">
-                        <li>Developed forecasting models with 82% accuracy</li>
-                        <li>Optimized Snowflake data warehouse performance by 25%</li>
-                        <li>Implemented CI/CD pipelines reducing ETL deployment time by 40%</li>
-                        <li>Created customer analytics dashboards processing 40k+ feedback instances</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section>
-                <h2 class="text-3xl font-bold mb-4 text-gray-800">Education</h2>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-gray-700">Master of Science in Computer Science</h3>
-                    <p class="text-emerald-500">Northwest Missouri State University</p>
-                    <p class="text-gray-500">Graduated: December 2023</p>
-                </div>
-            </section>
-        </main>
+    <div class="text-sm space-y-1 text-center">
+      <p>📍 San Diego, CA</p>
+      <p>📧 innrahulreddy.3@gmail.com</p>
+      <p>📞 (469) 909-7612</p>
+      <a href="https://linkedin.com/in/rahul-reddy-rayapuram" target="_blank" class="text-emerald-400 hover:underline">LinkedIn</a>
     </div>
 
-    <script>
-        // Animate progress bars on scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            const skills = [
-                { name: 'SQL', level: 98 },
-                { name: 'Python', level: 95 },
-                { name: 'Power BI', level: 90 },
-                { name: 'Azure', level: 88 }
-            ];
+    <a href="public/Rahul_Reddy_Resume.pdf" download class="mt-6 inline-block bg-emerald-500 hover:bg-emerald-600 px-6 py-2 rounded-full text-white font-semibold transition">📄 Download Resume</a>
 
-            skills.forEach(skill => {
-                const bar = document.createElement('div');
-                bar.className = 'progress bg-emerald-500 h-full rounded';
-                bar.style.width = skill.level + '%';
-                document.querySelector('.skill-bars').appendChild(bar);
-            });
-        });
-    </script>
+    <button id="themeToggle" class="absolute top-4 right-4 text-2xl">🌓</button>
+
+    <div class="mt-8">
+      <h2 class="font-bold text-lg mb-2">Interests</h2>
+      <p id="dynamicInterest" class="italic text-sm text-gray-300"></p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8 overflow-y-auto">
+    
+    <!-- About Me -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-bold mb-6">Welcome to My Portfolio</h2>
+      <p class="text-lg leading-relaxed">
+        Passionate Data Analyst with 5+ years of experience delivering insights and scalable solutions across Health, Media, Insurance, and Transportation industries. Specializing in cloud solutions, ETL pipelines, data modeling, and business intelligence.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-bold mb-6">Skills & Expertise</h2>
+      <div class="space-y-6">
+        <div class="skill">
+          <h4>SQL</h4>
+          <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Python</h4>
+          <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Power BI</h4>
+          <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Azure Synapse</h4>
+          <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Snowflake</h4>
+          <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-bold mb-10">Professional Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon bg-emerald-400"></div>
+          <div class="timeline-content">
+            <h3 class="font-bold text-xl">Freelance Consultant</h3>
+            <span class="text-sm text-gray-500">2024 - Present</span>
+            <p>Developed forecasting models, optimized Snowflake warehouse, built customer analytics dashboards, automated ETL CI/CD deployments.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon bg-blue-400"></div>
+          <div class="timeline-content">
+            <h3 class="font-bold text-xl">Application Development Sr Analyst @ Accenture</h3>
+            <span class="text-sm text-gray-500">2018 - 2021</span>
+            <p>Designed Azure Data Pipelines, Spark distributed ETL, SSIS integrations, and reduced report generation time by 40% using Python/VBA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Projects -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-bold mb-6">Academic Projects</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="project-card">
+          <h4 class="font-bold">NYC Weather Data Analysis</h4>
+          <p>Analyzed 3+ years of NYC weather data using Pandas, Matplotlib. Identified trends affecting local transportation systems.</p>
+        </div>
+        <div class="project-card">
+          <h4 class="font-bold">Customer-Product Sales Insights</h4>
+          <p>Built SQL queries and Power BI dashboards providing actionable insights into top-performing products, customer segments, and inventory gaps.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Lottie Animation Background -->
+<div id="lottieBackground" class="fixed inset-0 -z-10 opacity-10"></div>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/typewriter.js"></script>
+<script src="scripts/darkmode.js"></script>
+
 </body>
 </html>

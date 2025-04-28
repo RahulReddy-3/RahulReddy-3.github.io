@@ -1,27 +1,30 @@
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Animate.css overrides */
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
-.skill-progress {
-    animation: fadeIn 1s ease forwards;
+.fadeInUp {
+    animation-name: fadeInUp;
 }
 
-.timeline-item {
-    animation: fadeIn 0.5s ease forwards;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
-.project-card {
-    animation: fadeIn 0.5s ease forwards;
+/* Dynamic Interests Text Effect */
+#dynamicInterest {
+    animation: typing 3s steps(40, end) infinite alternate;
 }
 
-@keyframes typewriter {
+@keyframes typing {
     from { width: 0 }
     to { width: 100% }
-}
-
-#dynamic-tagline {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter 2s steps(40) infinite alternate;
 }

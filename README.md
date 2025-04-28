@@ -1,33 +1,45 @@
-# Data Engineering Portfolio
+# Rahul Reddy | Portfolio Website 🌟
 
-## Features
-- Dynamic profile editing system
-- Animated skill visualizations
-- Interactive background effects
-- Responsive design
-- Local storage persistence
+Welcome to my personal portfolio!  
+I'm a Senior Data Analyst with a passion for transforming data into powerful business insights, and developing scalable cloud data solutions.
 
-## Technologies Used
-- Tailwind CSS
-- Animate.css
-- LottieFiles
-- ScrollReveal
-- GitHub Pages
+This portfolio highlights my technical skills, professional journey, and key projects.
 
-## Setup
-Clone repository:
+---
 
-git clone https://github.com/RahulReddy-3/RahulReddy-3.git
+## 🚀 Technologies Used:
+- **HTML5 / TailwindCSS** — Styling and Layout
+- **JavaScript (ES6)** — Dynamic animations and features
+- **Animate.css, GSAP** — Smooth scroll and element animations
+- **Lottie Animations** — Background and playful motion
+- **GitHub Pages** — Hosting
 
+---
 
-[Visit my portfolio](https://RahulReddy-3.github.io/index.html)
+## 🗂 Project Structure:
 
-## Key Enhancements
-1. Professional tech animations using LottieFiles
-2. Advanced skill visualization with dynamic levels
-3. Floating edit button with smooth transitions
-4. Modern dark theme with gradient accents
-5. Scroll-triggered animations
-6. Local storage for profile persistence
-7. Responsive grid layouts
-8. Hover effects and micro-interactions
+portfolio/
+├── index.html              (Main website)
+├── edit-profile.html       (Update profile in future)
+├── styles/
+│   ├── main.css             (Overall styling)
+│   ├── sidebar.css          (Sidebar + profile styling)
+│   ├── timeline.css         (Experience timeline)
+│   └── animations.css       (Custom animations)
+├── scripts/
+│   ├── app.js               (Homepage logic)
+│   ├── typewriter.js        (Dynamic interests typing)
+│   └── darkmode.js          (Dark/Light toggle)
+├── assets/
+│   ├── images/
+│   │   ├── profile-placeholder.jpg
+│   │   ├── background-light.jpg
+│   │   ├── background-dark.jpg
+│   │   ├── logos/
+│   │   │   └── (Company logos for timeline)
+│   └── lottie/
+│       ├── data-animation.json
+│       ├── tech-background.json
+├── public/
+│   └── Rahul_Reddy_Resume.pdf
+└── README.md                (Simple project instructions)

@@ -1,21 +1,25 @@
 portfolio/
-├── index.html
-├── edit-profile.html
-├── scripts/
-│   ├── app.js
-│   └── profile-editor.js
+├── index.html              (Main website)
+├── edit-profile.html       (Update profile in future)
 ├── styles/
-│   ├── main.css
-│   └── animations.css
+│   ├── main.css             (Overall styling)
+│   ├── sidebar.css          (Sidebar + profile styling)
+│   ├── timeline.css         (Experience timeline)
+│   └── animations.css       (Custom animations)
+├── scripts/
+│   ├── app.js               (Homepage logic)
+│   ├── typewriter.js        (Dynamic interests typing)
+│   └── darkmode.js          (Dark/Light toggle)
 ├── assets/
-│   ├── lottie/
-│   │   └── data-pipeline.json
-│   └── images/
-│       ├── profile.jpg
-│       └── company-logos/
-│           ├── accenture.png
-│           └── snowflake.png
-└── public/
-    └── Rahul_Reddy_Resume.pdf
-
-I need vibrant colir themes for my website. SKills in vertical and also the projects in  a timeline view. and tailor the sections properly and include small background pictures related to IT industry, Data ENgineering, wherever required. 
+│   ├── images/
+│   │   ├── profile-placeholder.jpg
+│   │   ├── background-light.jpg
+│   │   ├── background-dark.jpg
+│   │   ├── logos/
+│   │   │   └── (Company logos for timeline)
+│   └── lottie/
+│       ├── data-animation.json
+│       ├── tech-background.json
+├── public/
+│   └── Rahul_Reddy_Resume.pdf
+└── README.md                (Simple project instructions)
