@@ -1,6 +1,6 @@
 // 🎵 Dynamic Typing Animation for Interests
 
-const interests = ["⚽ Football", "🎵 Music", "📸 Photography", "💻 Coding"];
+const interests = ["⚽ Football ", "🎵 Music ", "📸 Photography ", "💻 Coding "];
 let interestIndex = 0;
 const dynamicInterest = document.getElementById('dynamicInterest');
 
