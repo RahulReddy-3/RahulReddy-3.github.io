@@ -1,23 +1,16 @@
 // 🎵 Dynamic Typing Animation for Interests
 
-const interests = [
-  "⚽ Football Enthusiast",
-  "🎵 I am a Passionate Singer",
-  "📸 Into Photography",
-  "📚 Jack of all Trades",
-  "💻 Data Engineer at Heart"
-];
-
+const interests = ["⚽ Football", "🎵 Music", "📸 Photography", "💻 Coding"];
 let interestIndex = 0;
-let charIndex = 0;
-let currentInterest = '';
-let isDeleting = false;
-const interestElement = document.getElementById('dynamicInterest');
+const dynamicInterest = document.getElementById('dynamicInterest');
 
-function typeInterests() {
-  if (interestIndex >= interests.length) {
-    interestIndex = 0;
-  }
+function typeInterest() {
+  dynamicInterest.textContent = interests[interestIndex];
+  interestIndex = (interestIndex + 1) % interests.length;
+}
+
+// Slow it to every 4 seconds
+setInterval(typeInterest, 4000); 
 
   currentInterest = interests[interestIndex];
 
