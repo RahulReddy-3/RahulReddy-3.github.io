@@ -1,1 +1,47 @@
-<!-- styles/main.css will contain the real code -->
+/* main.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.5s ease;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
+section {
+    margin-bottom: 5rem;
+}
+
+.skill {
+    margin-bottom: 1.5rem;
+}
+
+.skill h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    background-color: #e5e7eb; /* Tailwind gray-200 */
+    height: 8px;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background-color: #10b981; /* Emerald green */
+    height: 100%;
+    border-radius: 9999px;
+    width: 0;
+    transition: width 2s ease;
+}
+
+/* Scroll Progress Bar */
+#progressBar {
+    height: 4px;
+    background-color: #10b981;
+    width: 0%;
+    transition: width 0.3s ease;
+}
