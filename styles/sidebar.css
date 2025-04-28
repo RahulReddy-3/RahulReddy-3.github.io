@@ -1,17 +1,1 @@
-aside {
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                url('../assets/images/background-light.jpg') center center/cover no-repeat;
-    background-attachment: fixed;
-}
-
-aside h1, aside p, aside a {
-    transition: all 0.3s ease-in-out;
-}
-
-aside img {
-    transition: transform 0.4s ease;
-}
-
-aside img:hover {
-    transform: scale(1.05);
-}
+<!-- styles/sidebar.css will contain the real code -->
