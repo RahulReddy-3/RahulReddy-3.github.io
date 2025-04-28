@@ -1,144 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rahul Reddy Rayapuram | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Reddy | Portfolio</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
 
-  <!-- Custom Styles -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/timeline.css">
   <link rel="stylesheet" href="styles/animations.css">
-
-  <!-- Lottie Player -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+<body class="bg-gray-100 text-gray-900 overflow-x-hidden">
 
-  <!-- Scroll Progress Bar -->
-  <div id="progressBar" class="fixed top-0 left-0 w-0 h-1 bg-emerald-400 z-50"></div>
-
-  <div class="flex flex-col md:flex-row min-h-screen">
-    <!-- Sidebar -->
-    <aside class="w-full md:w-1/3 bg-blue-900 p-6 flex flex-col items-center text-white relative">
-      <img id="profilePic" src="assets/images/profile-placeholder.jpg" alt="Profile" class="w-40 h-40 rounded-full mb-4 border-4 border-white shadow-lg">
-      <h1 id="fullName" class="text-3xl font-bold mb-1 text-center">Rahul Reddy Rayapuram</h1>
-      <p id="designation" class="text-lg text-emerald-300 mb-2 text-center">Senior Data Analyst</p>
-      <p id="location" class="text-sm mb-2">San Diego, CA</p>
-      <p id="phoneNumber" class="text-sm mb-2">+1 (469) 909-7612</p>
-      <p id="email" class="text-sm mb-4">iamrahulreddy.3@gmail.com</p>
-
-      <div class="flex space-x-4 mt-2">
-        <a href="https://linkedin.com/in/rahul-reddy-rayapuram" target="_blank" class="hover:text-emerald-400">LinkedIn</a>
-        <a href="https://github.com/RahulReddy-3" target="_blank" class="hover:text-emerald-400">GitHub</a>
-      </div>
-
-      <!-- Resume and Edit Profile -->
-      <div class="flex flex-col items-center mt-6 space-y-4">
-        <a href="public/Rahul_Reddy_Resume.pdf" download class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-2 rounded transition">
-          📄 Download Resume
-        </a>
-        <a href="edit-profile.html" class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded transition">
-          ✏️ Edit Profile
-        </a>
-      </div>
-
-      <!-- Interests -->
-      <div class="mt-10 text-center text-sm">
-        <h2 class="font-bold text-lg mb-1">Interests</h2>
-        <p id="dynamicInterest" class="text-emerald-300 h-5 animate__animated"></p>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="flex-1 p-8 space-y-16">
-
-      <!-- Hero Section -->
-      <section class="text-center">
-        <lottie-player src="assets/lottie/tech-dots.json" background="transparent" speed="1" loop autoplay style="width: 300px; height: 300px; margin: auto;"></lottie-player>
-        <h2 class="text-4xl font-bold mt-6 animate__animated animate__fadeInUp">Engineering data into powerful stories 🚀</h2>
-      </section>
-
-      <!-- About Me -->
-      <section>
-        <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Fueled by curiosity and a passion for technology, I build data-driven solutions that transform ideas into impact. 
-          With a foundation in Data Engineering and a vision for scalable systems, I craft pipelines that power tomorrow’s innovations.
-          Every dataset has a story — I make sure it’s heard clearly and powerfully.
-        </p>
-      </section>
-
-      <!-- Skills Section -->
-      <section>
-        <h2 class="text-3xl font-bold mb-6">Skills & Expertise</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="skill"><h4>SQL</h4><div class="skill-bar"><div class="skill-progress" data-skill="95%"></div></div></div>
-          <div class="skill"><h4>Python</h4><div class="skill-bar"><div class="skill-progress" data-skill="85%"></div></div></div>
-          <div class="skill"><h4>Power BI</h4><div class="skill-bar"><div class="skill-progress" data-skill="80%"></div></div></div>
-          <div class="skill"><h4>Azure Synapse</h4><div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div></div>
-          <div class="skill"><h4>ETL Pipelines</h4><div class="skill-bar"><div class="skill-progress" data-skill="85%"></div></div></div>
-          <div class="skill"><h4>Data Modeling</h4><div class="skill-bar"><div class="skill-progress" data-skill="80%"></div></div></div>
-          <div class="skill"><h4>Snowflake</h4><div class="skill-bar"><div class="skill-progress" data-skill="80%"></div></div></div>
-          <div class="skill"><h4>Tableau</h4><div class="skill-bar"><div class="skill-progress" data-skill="75%"></div></div></div>
-          <div class="skill"><h4>Git/GitHub</h4><div class="skill-bar"><div class="skill-progress" data-skill="75%"></div></div></div>
-          <div class="skill"><h4>AWS S3</h4><div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div></div>
-          <div class="skill"><h4>Java</h4><div class="skill-bar"><div class="skill-progress" data-skill="70%"></div></div></div>
-          <div class="skill"><h4>R Programming</h4><div class="skill-bar"><div class="skill-progress" data-skill="65%"></div></div></div>
-        </div>
-      </section>
-
-      <!-- Professional Summary -->
-      <section>
-        <h2 class="text-3xl font-bold mb-4">Professional Summary</h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Results-driven Senior Data Analyst with over 5 years of experience across Health, Media, Insurance, and Transportation industries. 
-          Skilled in transforming raw data into strategic insights, optimizing ETL pipelines, implementing cloud solutions, and developing business intelligence dashboards. 
-          Proven ability to drive cost savings, improve operational efficiency, and deliver data-driven business impact.
-        </p>
-      </section>
-
-      <!-- Career Timeline -->
-      <section>
-        <h2 class="text-3xl font-bold mb-8 text-center">Career Timeline</h2>
-        <div id="timelineContainer" class="timeline-container">
-          <!-- Timeline items will be dynamically inserted by app.js -->
-        </div>
-      </section>
-
-      <!-- Academic Projects -->
-      <section>
-        <h2 class="text-3xl font-bold mb-4">Academic Projects</h2>
-        <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 space-y-2">
-          <li><strong>Python OCR Pipeline:</strong> Built a Flask-based OCR system using Tesseract OCR and Google Colab for text extraction from PDFs.</li>
-          <li><strong>iOS University App:</strong> Developed an iOS app integrating campus maps, mailing, and Firebase authentication for enhanced student exploration.</li>
-        </ul>
-      </section>
-
-      <!-- Awards -->
-      <section>
-        <h2 class="text-3xl font-bold mb-4">Awards</h2>
-        <p class="bg-yellow-200 text-yellow-800 p-4 rounded-lg inline-block">
-          ⭐ Star Performer Award at Accenture
-        </p>
-      </section>
-
-    </main>
+<!-- Sidebar Profile Section -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-gradient-to-b from-blue-900 to-emerald-900 text-white p-6 flex flex-col justify-start shadow-lg">
+  <div class="text-center mb-6">
+    <img id="profilePicSidebar" src="assets/images/profile-placeholder.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto shadow-md object-cover" />
+    <h2 id="sidebarName" class="text-xl font-bold mt-4">Rahul Reddy</h2>
+    <p id="sidebarDesignation" class="text-sm text-emerald-300">Senior Data Analyst</p>
   </div>
 
-  <!-- Scripts -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/typewriter.js"></script>
-  <script src="scripts/darkmode.js"></script>
-  <script src="scripts/saveProfile.js"></script>
+  <div class="text-sm space-y-2 mt-4">
+    <p id="sidebarLocation">📍 San Diego, CA</p>
+    <p id="sidebarPhone">📞 (469) 909-7612</p>
+    <p id="sidebarEmail">📧 iamrahulreddy.3@gmail.com</p>
+    <a href="edit-profile.html" class="mt-4 inline-block bg-emerald-500 px-4 py-2 rounded text-center hover:bg-emerald-600 transition w-full">Edit Profile</a>
+  </div>
+
+  <div class="mt-auto pt-6 text-center text-xs text-gray-300">
+    Interests:
+    <div id="dynamicInterest" class="text-emerald-400 mt-1"></div>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<div class="ml-64 p-6">
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative flex flex-col justify-center items-center text-center min-h-[30vh] fadeHero mb-8">
+    <img id="heroBackground" src="assets/images/hero1.jpg" alt="Hero Background" class="absolute top-0 left-0 w-full h-full object-cover opacity-30 -z-10" />
+    <div class="text-center space-y-2">
+      <h1 class="text-3xl font-bold text-emerald-600">Turning Complex Data into Clear Insights</h1>
+      <p class="text-md text-gray-700 max-w-2xl mx-auto">
+        Empowering smarter decisions across industries through data-driven innovation and scalable systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="my-16 bg-gradient-to-r from-green-50 to-emerald-50 py-8 rounded-xl shadow-md">
+    <h2 class="text-3xl text-center font-bold mb-6 text-emerald-600">About Me</h2>
+    <p class="text-md max-w-3xl mx-auto text-gray-700 leading-relaxed px-4">
+      Fueled by curiosity and a passion for technology, I build data-driven solutions that transform ideas into impact. 
+      With a strong foundation in Data Engineering and a vision for scalable architectures, 
+      I specialize in crafting clean, efficient pipelines that grow with the needs of tomorrow. 
+      Every dataset has a hidden story — and I make sure it’s heard powerfully.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="my-16 bg-gradient-to-r from-emerald-50 to-blue-50 py-8 rounded-xl shadow-md">
+    <h2 class="text-3xl text-center font-bold mb-8 text-emerald-600">Skills & Expertise</h2>
+    <div id="skillsList" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"></div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline" class="my-16 relative bg-gradient-to-r from-blue-50 to-green-50 py-8 rounded-xl shadow-md overflow-x-auto">
+    <h2 class="text-3xl text-center font-bold mb-8 text-emerald-600">Career Timeline</h2>
+
+    <div class="flex items-center justify-between mb-6 px-4">
+      <button id="scrollLeft" class="bg-emerald-500 hover:bg-emerald-600 text-white p-2 rounded-full shadow bounceHover">
+        ⬅️
+      </button>
+      <button id="scrollRight" class="bg-emerald-500 hover:bg-emerald-600 text-white p-2 rounded-full shadow bounceHover">
+        ➡️
+      </button>
+    </div>
+
+    <div id="timelineContainer" class="flex items-start hide-scrollbar px-6 gap-8"></div>
+  </section>
+
+  <!-- Interests Section -->
+  <section id="interests" class="my-16 bg-gradient-to-r from-purple-50 to-indigo-50 py-8 rounded-xl shadow-md text-center">
+    <h2 class="text-3xl font-bold text-emerald-600 mb-6">Hobbies & Passions</h2>
+    <p class="text-sm text-gray-700 max-w-2xl mx-auto">
+      Exploring football ⚽, music 🎵, photography 📸, and coding adventures 💻!
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-600">
+    <p>&copy; 2025 Rahul Reddy Rayapuram | All Rights Reserved</p>
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="scripts/app.js"></script>
+<script src="scripts/typewriter.js"></script>
+<script src="scripts/scrollreveal.js"></script>
+<script src="scripts/darkmode.js"></script>
+
+<script>
+// Load profile data
+window.onload = function() {
+  const profileData = JSON.parse(localStorage.getItem('profileData'));
+  const profilePic = localStorage.getItem('profilePic');
+
+  if (profileData) {
+    document.getElementById('sidebarName').innerText = profileData.fullName || 'Rahul Reddy';
+    document.getElementById('sidebarDesignation').innerText = profileData.designation || 'Senior Data Analyst';
+    document.getElementById('sidebarLocation').innerText = '📍 ' + (profileData.location || 'San Diego, CA');
+    document.getElementById('sidebarPhone').innerText = '📞 ' + (profileData.phone || '(469) 909-7612');
+    document.getElementById('sidebarEmail').innerText = '📧 ' + (profileData.email || 'iamrahulreddy.3@gmail.com');
+  }
+  if (profilePic) {
+    document.getElementById('profilePicSidebar').src = profilePic;
+  }
+};
+</script>
 
 </body>
 </html>

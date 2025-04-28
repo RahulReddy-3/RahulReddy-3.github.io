@@ -1,15 +1,73 @@
-/* timeline.css */
+/* 🚀 Timeline Section Styles */
 
+/* Timeline Overall Layout */
 #timelineContainer {
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    gap: 2rem;
-    padding-bottom: 2rem;
-    scroll-snap-type: x mandatory;
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  scroll-behavior: smooth;
 }
 
-.timeline-card {
-    scroll-snap-align: start;
-    flex-shrink: 0;
+/* Hide Scrollbar */
+#timelineContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Green Connector Line */
+#timelineContainer::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #34d399, #10b981);
+  z-index: 0;
+  animation: pulseLine 3s infinite alternate;
+}
+
+/* Individual Timeline Card */
+.timelinePop {
+  background: white;
+  border: 2px solid #d1fae5;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  width: 300px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.timelinePop:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Arrow Buttons */
+#scrollLeft, #scrollRight {
+  transition: all 0.3s;
+}
+#scrollLeft:hover, #scrollRight:hover {
+  transform: scale(1.1);
+}
+
+/* Responsibility List (Hidden initially) */
+ul[id^="responsibility-"] {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  text-align: left;
+}
+
+/* Timeline Pulse Animation */
+@keyframes pulseLine {
+  0% {
+    background: linear-gradient(to right, #6ee7b7, #34d399);
+  }
+  100% {
+    background: linear-gradient(to right, #34d399, #10b981);
+  }
 }

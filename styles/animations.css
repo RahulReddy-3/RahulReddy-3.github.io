@@ -1,24 +1,77 @@
-/* animations.css */
+/* 🚀 Custom Animations */
 
-/* Smooth fade-in on scroll */
-.animate__fadeInUp {
-    animation: fadeInUp 1s ease forwards;
+/* Fade Up Animation for Smooth Reveal */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards ease-out;
 }
 
-/* Typing dynamic interest text */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Custom scroll fade up */
-@keyframes fadeInUp {
+/* Fade Down Animation */
+.fadeInDown {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 1s forwards ease-out;
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pop/Bounce Animation on Hover */
+.bounceHover:hover {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Pulse Animation for Green Line */
+@keyframes pulseLine {
   0% {
-    transform: translateY(30px);
-    opacity: 0;
+    background: linear-gradient(to right, #6ee7b7, #34d399);
   }
   100% {
-    transform: translateY(0);
+    background: linear-gradient(to right, #34d399, #10b981);
+  }
+}
+
+/* Zoom In Animation */
+.zoomIn {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 0.8s forwards ease-out;
+}
+
+@keyframes zoomIn {
+  to {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glow on Scroll for Timeline */
+.glowOnScroll {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #10b981, 0 0 10px #10b981;
+  }
+  100% {
+    box-shadow: 0 0 15px #34d399, 0 0 25px #34d399;
   }
 }

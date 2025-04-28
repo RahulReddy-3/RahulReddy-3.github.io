@@ -1,138 +1,150 @@
-// app.js
-
-// =====================
-// Scroll Progress Bar
-// =====================
-window.onscroll = function() {scrollProgress()};
-
-function scrollProgress() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("progressBar").style.width = scrolled + "%";
-}
-
-// =====================
-// Skills Progress Animation
-// =====================
-document.addEventListener("DOMContentLoaded", () => {
-    const skillProgress = document.querySelectorAll('.skill-progress');
-    skillProgress.forEach(progress => {
-        let width = progress.getAttribute('data-skill');
-        progress.style.width = width;
-    });
-});
-
-// =====================
-// Timeline Data
-// =====================
-const timelineData = [
-    {
-        title: "Freelance Data Consultant",
-        period: "Mar 2024 – Present",
-        shortSummary: "Developed forecasting models and optimized Snowflake data warehouses for client analytics.",
-        responsibilities: [
-            "Built forecasting models in Python achieving 82% accuracy on seasonal trends.",
-            "Developed Power BI dashboards processing 40,000+ customer feedback instances.",
-            "Managed Snowflake warehouse optimizations boosting query performance by 25%.",
-            "Designed CI/CD pipelines for ETL workflows reducing deployment time by 40%.",
-            "Applied advanced Data Modeling for improved historical tracking and analysis."
-        ]
-    },
-    {
-        title: "Senior Analyst, Accenture",
-        period: "Apr 2020 – Nov 2021",
-        shortSummary: "Engineered real-time Azure ETL solutions and led Spark distributed pipelines in cloud environments.",
-        responsibilities: [
-            "Designed Change Data Capture (CDC) ETL pipelines enabling real-time data refresh.",
-            "Engineered scalable Data Factory pipelines with multi-threaded Spark clusters.",
-            "Applied SQL tuning and index optimization, improving processing efficiency by 35%.",
-            "Created Data Warehouses on Azure Synapse reducing query execution by 20%.",
-            "Facilitated Agile delivery, translating business needs into technical specifications."
-        ]
-    },
-    {
-        title: "Analyst, Accenture",
-        period: "Apr 2018 – Mar 2020",
-        shortSummary: "Built ETL pipelines using SSIS and developed reporting dashboards with Tableau and Power BI.",
-        responsibilities: [
-            "Crafted 20+ complex SQL queries supporting analytics in health and insurance industries.",
-            "Integrated SSIS workflows orchestrating data transformations from diverse sources.",
-            "Developed Python scripts for automating large scale data analysis and cleansing.",
-            "Built interactive Tableau dashboards visualizing business KPIs.",
-            "Debugged T-SQL queries in SSMS ensuring robust database integration."
-        ]
-    },
-    {
-        title: "Associate, Accenture",
-        period: "Sep 2017 – Mar 2018",
-        shortSummary: "Streamlined Oracle database integrations and automated monthly reporting pipelines for Amazon Marketplace.",
-        responsibilities: [
-            "Engineered automated Oracle DB ETL processes for 2M+ Amazon seller records.",
-            "Created Excel VBA scripts saving 40+ hours monthly manual reporting time.",
-            "Adopted Agile SDLC practices to streamline delivery cycles.",
-            "Optimized complex T-SQL queries enhancing performance by 50%.",
-            "Maintained codebase versioning with TFS."
-        ]
-    },
-    {
-        title: "Academic Project: OCR Automation",
-        period: "Aug 2023 – Dec 2023",
-        shortSummary: "Built a Flask application to automate OCR extraction of text from PDFs using Google Colab and Tesseract.",
-        responsibilities: [
-            "Developed a Flask web service managing PDF uploads and OCR processing.",
-            "Leveraged Tesseract OCR library for accurate text extraction.",
-            "Integrated Google Colab and Drive for scalable OCR workflows.",
-            "Designed UI for easy document upload and output retrieval.",
-            "Enabled automatic text formatting and error-checking mechanisms."
-        ]
-    },
-    {
-        title: "Academic Project: iOS Campus Explorer App",
-        period: "Jan 2023 – Apr 2023",
-        shortSummary: "Designed an iOS app helping new students explore campus facilities with maps and secure login features.",
-        responsibilities: [
-            "Built user authentication using Firebase backend services.",
-            "Integrated dynamic campus maps using Apple MapKit APIs.",
-            "Designed User-friendly navigation across campus zones.",
-            "Implemented secure login, profile management, and emergency alerts.",
-            "Optimized app for responsive UI across iOS devices."
-        ]
-    }
+// 🚀 Skills Injection (with actual ratings)
+const skills = [
+  { name: "SQL", level: 95 },
+  { name: "Python", level: 85 },
+  { name: "Power BI", level: 80 },
+  { name: "Azure Synapse", level: 75 },
+  { name: "ETL Pipelines", level: 90 },
+  { name: "Data Modeling", level: 85 },
+  { name: "Snowflake", level: 80 },
+  { name: "Tableau", level: 75 },
+  { name: "Git/GitHub", level: 80 },
+  { name: "AWS S3", level: 70 },
+  { name: "Java", level: 70 },
+  { name: "Cloud Solutions", level: 75 }
 ];
 
-// =====================
-// Timeline Builder
-// =====================
-function buildTimeline() {
-    const container = document.getElementById('timelineContainer');
-    timelineData.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = "timeline-card bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg w-[300px] shrink-0 relative flex flex-col justify-between";
+const skillsList = document.getElementById('skillsList');
 
-        card.innerHTML = `
-            <h3 class="text-xl font-bold mb-2">${item.title}</h3>
-            <p class="text-sm text-gray-500 mb-1">${item.period}</p>
-            <p class="mb-2 text-gray-600 dark:text-gray-300">${item.shortSummary}</p>
-            <button onclick="expandCard(${index})" class="mt-auto bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded text-sm transition">
-                Know More →
-            </button>
-            <div id="details-${index}" class="hidden mt-4 text-gray-700 dark:text-gray-300 text-sm space-y-2">
-                ${item.responsibilities.map(r => `<li>🔹 ${r}</li>`).join('')}
-            </div>
-        `;
-        container.appendChild(card);
-    });
+skills.forEach(skill => {
+  const skillDiv = document.createElement('div');
+  skillDiv.className = "space-y-2";
+
+  skillDiv.innerHTML = `
+    <p class="font-semibold text-gray-800">${skill.name}</p>
+    <div class="w-full bg-gray-200 rounded-full h-3">
+      <div class="bg-emerald-500 h-3 rounded-full progress" style="width: ${skill.level}%; transition: width 1s ease;"></div>
+    </div>
+  `;
+  skillsList.appendChild(skillDiv);
+});
+
+// 🚀 Timeline Data Injection (proper separation)
+const timelineData = [
+  {
+    title: "Freelance Data Consultant",
+    duration: "March 2024 - Present",
+    image: "assets/images/freelance.jpg",
+    shortDesc: "Crafted predictive models, Snowflake tuning, CI/CD pipelines, customer analytics dashboards.",
+    responsibilities: [
+      "Built forecasting models with 82% accuracy for budgeting.",
+      "Optimized Snowflake warehouse performance by 25%.",
+      "Created Power BI dashboards for 40k+ customer feedback.",
+      "Engineered robust CI/CD pipelines reducing ETL time by 40%."
+    ]
+  },
+  {
+    title: "Academic Project - Institutional Data OCR",
+    duration: "Aug 2023 - Dec 2023",
+    image: "assets/images/university.jpg",
+    shortDesc: "Built Python OCR service for university archives using Tesseract, Flask, and Google Drive.",
+    responsibilities: [
+      "Created end-to-end text extraction pipeline from PDFs.",
+      "Automated document upload and processing workflows.",
+      "Streamlined OCR accuracy improvements.",
+      "Secured document storage using Google Cloud."
+    ]
+  },
+  {
+    title: "Academic Project - iOS University Explorer App",
+    duration: "Jan 2023 - April 2023",
+    image: "assets/images/university.jpg",
+    shortDesc: "Built iOS app with Firebase login, campus Maps, and real-time mailing features for university.",
+    responsibilities: [
+      "Built iOS UI and integrated Firebase Auth.",
+      "Real-time navigation system integration with Maps.",
+      "Secured login system with OTP authentication.",
+      "Collaborated on testing and final launch."
+    ]
+  },
+  {
+    title: "Accenture - Application Development Senior Analyst",
+    duration: "April 2020 - November 2021",
+    image: "assets/images/accenture.jpg",
+    shortDesc: "Built Data Warehouses, SQL tuning, Azure ETL pipelines across Health, Media, and Transport domains.",
+    responsibilities: [
+      "Optimized 50+ ETL packages reducing data time by 50%.",
+      "Built CDC-based Spark pipelines in Azure.",
+      "Documented full data lineage for critical systems.",
+      "Automated reporting with Python (Pandas, NumPy)."
+    ]
+  },
+  {
+    title: "Accenture - Application Development Analyst",
+    duration: "April 2018 - March 2020",
+    image: "assets/images/accenture.jpg",
+    shortDesc: "Developed SSIS pipelines, Azure Synapse analytics, Disney project front-end debugging via SQL tuning.",
+    responsibilities: [
+      "Engineered scalable ETL pipelines (Azure + SSIS).",
+      "Optimized front-end SQL debugging for Disney websites.",
+      "Crafted secure data governance for healthcare clients.",
+      "Designed Data Warehouse Architecture for AON Health."
+    ]
+  },
+  {
+    title: "Accenture - Application Development Associate",
+    duration: "Sept 2017 - March 2018",
+    image: "assets/images/accenture.jpg",
+    shortDesc: "Oracle DB design for Amazon Seller Central; automated reports saving 40 hours monthly.",
+    responsibilities: [
+      "Built Oracle Database for 2M+ seller records.",
+      "Automated monthly reports using Excel VBA Macros.",
+      "Implemented SSIS ETL workflows with performance logging.",
+      "Participated in Agile-based delivery cycles."
+    ]
+  }
+];
+
+const timelineContainer = document.getElementById('timelineContainer');
+
+// Inject Timeline Cards
+timelineData.forEach((item, index) => {
+  const card = document.createElement('div');
+  card.className = "bg-white rounded-lg shadow-lg p-6 w-[300px] flex flex-col timelinePop relative transition-transform hover:scale-105";
+
+  card.innerHTML = `
+    <img src="${item.image}" alt="Logo" class="h-12 mx-auto mb-4 object-contain" />
+    <h3 class="text-xl font-bold text-center text-gray-800 mb-2">${item.title}</h3>
+    <p class="text-sm text-gray-500 text-center mb-2">${item.duration}</p>
+    <p class="text-gray-700 text-sm">${item.shortDesc}</p>
+    <button class="text-emerald-500 font-bold mt-4" onclick="expandResponsibilities(this, ${index})">⬇️ Know More</button>
+    <ul id="responsibility-${index}" class="hidden list-disc mt-4 pl-5 text-sm text-left text-gray-600"></ul>
+  `;
+
+  timelineContainer.appendChild(card);
+});
+
+// Expand / Collapse Timeline Cards
+function expandResponsibilities(button, index) {
+  const ul = document.getElementById(`responsibility-${index}`);
+  if (ul.classList.contains('hidden')) {
+    ul.innerHTML = timelineData[index].responsibilities.map(item => `<li>${item}</li>`).join('');
+    ul.classList.remove('hidden');
+    button.innerText = "⬆️ Show Less";
+  } else {
+    ul.innerHTML = '';
+    ul.classList.add('hidden');
+    button.innerText = "⬇️ Know More";
+  }
 }
 
-function expandCard(index) {
-    const details = document.getElementById(`details-${index}`);
-    if (details.classList.contains('hidden')) {
-        details.classList.remove('hidden');
-    } else {
-        details.classList.add('hidden');
-    }
-}
+// Scroll Buttons
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
 
-// Build Timeline on Load
-document.addEventListener('DOMContentLoaded', buildTimeline);
+scrollLeftBtn.addEventListener('click', () => {
+  timelineContainer.scrollBy({ left: -300, behavior: 'smooth' });
+});
+scrollRightBtn.addEventListener('click', () => {
+  timelineContainer.scrollBy({ left: 300, behavior: 'smooth' });
+});
