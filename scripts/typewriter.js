@@ -1,36 +1,37 @@
-// 🎵 Dynamic Typing Animation for Interests
+// 🎵 Dynamic Typing Animation for Interests (with typing + deleting effect)
 
-const interests = ["⚽ Football ", "🎵 Music ", "📸 Photography ", "💻 Coding "];
+const interests = ["⚽ Football", "🎵 Music", "📸 Photography", "💻 Coding"];
 let interestIndex = 0;
-const dynamicInterest = document.getElementById('dynamicInterest');
+let charIndex = 0;
+let isDeleting = false;
+const interestElement = document.getElementById('dynamicInterest');
 
-function typeInterest() {
-  dynamicInterest.textContent = interests[interestIndex];
-  interestIndex = (interestIndex + 1) % interests.length;
-}
+function typeInterests() {
+  if (!interestElement) return; // Safety check
 
-// Slow it to every 4 seconds
-setInterval(typeInterest, 4000); 
-
-  currentInterest = interests[interestIndex];
+  const currentInterest = interests[interestIndex % interests.length];
 
   if (isDeleting) {
-    interestElement.innerText = currentInterest.substring(0, charIndex--);
+    interestElement.textContent = currentInterest.substring(0, charIndex--);
   } else {
-    interestElement.innerText = currentInterest.substring(0, charIndex++);
+    interestElement.textContent = currentInterest.substring(0, charIndex++);
   }
+
+  let typingSpeed = isDeleting ? 60 : 120; // Typing speed based on action
 
   if (!isDeleting && charIndex === currentInterest.length) {
+    // Pause after complete typing
     isDeleting = true;
-    setTimeout(typeInterests, 1200); // Pause after fully typed
+    typingSpeed = 1200;
   } else if (isDeleting && charIndex === 0) {
+    // Pause before next interest
     isDeleting = false;
     interestIndex++;
-    setTimeout(typeInterests, 400); // Pause before typing next
-  } else {
-    setTimeout(typeInterests, isDeleting ? 50 : 100);
+    typingSpeed = 500;
   }
+
+  setTimeout(typeInterests, typingSpeed);
 }
 
-// Start Typing Effect after DOM Content is loaded
+// Start Typing after page load
 document.addEventListener('DOMContentLoaded', typeInterests);
