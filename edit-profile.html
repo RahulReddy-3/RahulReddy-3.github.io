@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile - Rahul Reddy Rayapuram</title>
 
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-emerald-100 to-blue-100 min-h-screen flex flex-col justify-center items-center p-6">
+
+  <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-2xl">
+    <h1 class="text-3xl font-bold text-center mb-6 text-emerald-700">Edit Profile</h1>
+
+    <form id="editProfileForm" class="space-y-6">
+
+      <div class="text-center">
+        <img id="profilePreview" src="assets/images/profile-placeholder.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow">
+        <input type="file" id="profilePicInput" accept="image/*" class="block mx-auto text-sm" />
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700">Full Name</label>
+        <input type="text" id="fullName" placeholder="Rahul Reddy Rayapuram" class="w-full mt-1 p-2 border rounded" required>
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700">Current Designation</label>
+        <input type="text" id="designation" placeholder="Senior Data Analyst" class="w-full mt-1 p-2 border rounded" required>
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700">Location</label>
+        <input type="text" id="location" placeholder="San Diego, CA" class="w-full mt-1 p-2 border rounded" required>
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700">Phone Number</label>
+        <input type="text" id="phone" placeholder="(469) 909-7612" class="w-full mt-1 p-2 border rounded" required>
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700">Email</label>
+        <input type="email" id="email" placeholder="iamrahulreddy.3@gmail.com" class="w-full mt-1 p-2 border rounded" required>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="bg-emerald-500 text-white px-6 py-2 rounded hover:bg-emerald-600 transition">
+          Save Changes
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    // Load and preview the uploaded profile picture
+    const profilePicInput = document.getElementById('profilePicInput');
+    const profilePreview = document.getElementById('profilePreview');
+
+    profilePicInput.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        profilePreview.src = URL.createObjectURL(file);
+        localStorage.setItem('profilePic', profilePreview.src);
+      }
+    });
+
+    // Handle form save
+    const form = document.getElementById('editProfileForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const profileData = {
+        fullName: document.getElementById('fullName').value,
+        designation: document.getElementById('designation').value,
+        location: document.getElementById('location').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+      };
+
+      localStorage.setItem('profileData', JSON.stringify(profileData));
+
+      alert('Profile saved successfully!');
+      window.location.href = "index.html"; // Redirect back to homepage
+    });
+
+    // Pre-fill form if data exists
+    window.onload = function() {
+      const savedData = JSON.parse(localStorage.getItem('profileData'));
+      if (savedData) {
+        document.getElementById('fullName').value = savedData.fullName || '';
+        document.getElementById('designation').value = savedData.designation || '';
+        document.getElementById('location').value = savedData.location || '';
+        document.getElementById('phone').value = savedData.phone || '';
+        document.getElementById('email').value = savedData.email || '';
+      }
+
+      const savedPic = localStorage.getItem('profilePic');
+      if (savedPic) {
+        profilePreview.src = savedPic;
+      }
+    };
+  </script>
+
+</body>
+</html>
